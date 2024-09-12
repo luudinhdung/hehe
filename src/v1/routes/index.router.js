@@ -1,11 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
-router.get('/checkstatus', (req, res, next) => {
-    res.status(200).json({
-        status: 'success',
-        message: 'api ok'
-    })
-})
+const AuthController = require('../controllers/index.controller')
+router.get('/login',AuthController.login)
 
 module.exports = router;
